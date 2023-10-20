@@ -3,7 +3,7 @@ import { TableCellProps } from './types'
 import UiTypography from '../../../../Ui/UiTypography'
 import UiBox from '../../../../Ui/UiBox'
 
-export const TableCell: React.FC<TableCellProps> = ({ title, subtitle }) => {
+export const PersonCell: React.FC<TableCellProps> = ({ title, subtitle }) => {
 	return (
 		<UiBox flex direction={'column'} gap={'10px'}>
 			<UiTypography weight={'semibold'}>{title}</UiTypography>

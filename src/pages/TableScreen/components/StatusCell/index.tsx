@@ -1,9 +1,9 @@
 import React from 'react'
-import { ReferralStatusProps } from './types'
+import { StatusCellProps } from './types'
 import UiTypography from '../../../../Ui/UiTypography'
 import UiBox from '../../../../Ui/UiBox'
 
-export const ReferralStatus: React.FC<ReferralStatusProps> = ({ title, isFraud }) => {
+export const StatusCell: React.FC<StatusCellProps> = ({ title, isFraud }) => {
 	const fraudStatus = isFraud ? 'Marked as fraud' : 'Passed fraud checks'
 	const fraudColor = isFraud ? 'red' : 'gray'
 

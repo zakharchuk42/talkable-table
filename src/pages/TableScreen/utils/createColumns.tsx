@@ -1,10 +1,9 @@
-import UiBox from '../../../Ui/UiBox'
-import UiTypography from '../../../Ui/UiTypography'
 import React from 'react'
-import { TableCell } from '../components/TableCell'
-import { ReferralStatus } from '../components/ReferralStatus'
+import { PersonCell } from '../components/PersonCell'
+import { StatusCell } from '../components/StatusCell'
 import { ITableColumn } from '../../../Widgets/Table/types'
 import { IDataTable } from './fakeData'
+import { EventCell } from '../components/EventCell'
 
 export const createColumns = (): ITableColumn<IDataTable>[] => [
 	{
@@ -12,15 +11,7 @@ export const createColumns = (): ITableColumn<IDataTable>[] => [
 		name: 'Referral event',
 		width: '25%',
 		render: (value) => {
-			return (
-				<UiBox flex direction={'column'} gap={'10px'}>
-					<UiTypography weight={'semibold'}>{value.title}</UiTypography>
-					<UiTypography color={'gray'} variant={'small'} weight={'semibold'}>
-						{value.date}
-					</UiTypography>
-					<UiTypography weight={'bold'}>{value.price}</UiTypography>
-				</UiBox>
-			)
+			return <EventCell title={value.title} date={value.date} price={value.price} />
 		},
 	},
 	{
@@ -28,12 +19,7 @@ export const createColumns = (): ITableColumn<IDataTable>[] => [
 		name: 'Advocate',
 		width: '30%',
 		render: (value) => {
-			return (
-				<UiBox flex direction={'column'} gap={'10px'}>
-					<UiTypography weight={'semibold'}>{value.from.email}</UiTypography>
-					<UiTypography>{value.from.sign}</UiTypography>
-				</UiBox>
-			)
+			return <PersonCell title={value.from.email} subtitle={value.from.sign} />
 		},
 	},
 	{
@@ -41,7 +27,7 @@ export const createColumns = (): ITableColumn<IDataTable>[] => [
 		name: 'Friend',
 		width: '25%',
 		render: (value) => {
-			return <TableCell title={value.to.email} subtitle={value.to.sign} />
+			return <PersonCell title={value.to.email} subtitle={value.to.sign} />
 		},
 	},
 	{
@@ -49,12 +35,7 @@ export const createColumns = (): ITableColumn<IDataTable>[] => [
 		name: 'Referral status',
 		width: '20%',
 		render: (value) => {
-			return (
-				<ReferralStatus
-					title={value.status.status}
-					isFraud={value.status.fraud}
-				/>
-			)
+			return <StatusCell title={value.status.status} isFraud={value.status.fraud} />
 		},
 	},
 ]
