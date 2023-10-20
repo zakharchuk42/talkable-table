@@ -1,0 +1,48 @@
+.typography {
+
+    &__color {
+        &_dark {
+            color: var(--colors-dark);
+        }
+
+        &_gray {
+            color: var(--colors-gray);
+        }
+
+        &_red {
+            color: var(--colors-red);
+        }
+    }
+
+    &__variant {
+        &_body {
+            font-size: 14px;
+        }
+
+        &_subtitle {
+            font-size: 18px;
+        }
+
+        &_small {
+            font-size: 12px;
+        }
+    }
+
+    &_semibold {
+        font-weight: 500;
+    }
+
+    &_bold {
+        font-weight: 700;
+    }
+
+    &__align {
+        &_center {
+            text-align: center;
+        }
+
+        &_right {
+            text-align: right;
+        }
+    }
+}

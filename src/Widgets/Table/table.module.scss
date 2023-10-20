@@ -1,0 +1,26 @@
+.table {
+    width: 100%;
+    overflow-x: scroll;
+
+    table {
+        width: 100%;
+        min-width: 1250px;
+        border-collapse: collapse;
+
+        th {
+            text-align: left;
+            padding-bottom: 16px;
+        }
+
+        tr {
+            border-bottom: 2px solid rgba(128, 128, 128, 0.1);
+        }
+
+        td {
+            padding: 20px 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: top;
+        }
+    }
+}
